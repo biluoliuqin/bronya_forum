@@ -1,0 +1,17 @@
+SET NAMES utf8mb4;
+SET FOREIGN_KEY_CHECKS = 0;
+
+DROP TABLE IF EXISTS `tb_manager`;
+CREATE TABLE `tb_manager`  (
+  `managerId` int NOT NULL AUTO_INCREMENT,
+  `managerName` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `pwd` varchar(255) CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci NULL DEFAULT NULL,
+  `lastLoginTime` datetime NULL DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `thisLoginTime` datetime NULL DEFAULT NULL,
+  PRIMARY KEY (`managerId`) USING BTREE
+) ENGINE = InnoDB AUTO_INCREMENT = 3 CHARACTER SET = utf8mb4 COLLATE = utf8mb4_0900_ai_ci ROW_FORMAT = Dynamic;
+
+INSERT INTO `tb_manager` VALUES (1, 'biluo', '1234', '2024-05-03 16:24:19', NULL);
+INSERT INTO `tb_manager` VALUES (2, '2', '2', '2024-05-03 16:24:19', NULL);
+
+SET FOREIGN_KEY_CHECKS = 1;
